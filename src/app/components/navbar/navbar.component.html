@@ -1,0 +1,17 @@
+<header class="navbar">
+  <div class="navbar-content">
+    <a class="brand" routerLink="/jobs">Job Board</a>
+
+    <nav aria-label="Main navigation" class="links">
+      <a class="nav-link" routerLink="/jobs" routerLinkActive="active">Jobs</a>
+
+      @if (!isLoggedIn()) {
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      }
+
+      @if (isLoggedIn()) {
+        <button class="logout-button" type="button" (click)="logout()">Log Out</button>
+      }
+    </nav>
+  </div>
+</header>

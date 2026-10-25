@@ -1,0 +1,38 @@
+<section class="card login-card">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" />
+            @if ((loginForm.controls.email.touched || submitted) && loginForm.controls.email.hasError('required')) {
+            <p class="error-message">Email is required.</p>
+            }
+            @if ((loginForm.controls.email.touched || submitted) && loginForm.controls.email.hasError('email')) {
+            <p class="error-message">Please enter a valid email address.</p>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password" />
+            @if ((loginForm.controls.password.touched || submitted) && loginForm.controls.password.hasError('required'))
+            {
+            <p class="error-message">Password is required.</p>
+            }
+        </div>
+
+        <button type="submit">Login</button>
+
+        @if (invalidCredentials) {
+        <p class="error-message" role="alert">Invalid email or password.</p>
+        }
+    </form>
+    <!-- 
+  <p class="hint">
+    Testing credentials: trainee@example.com / Angular123
+  </p> 
+  -->
+    <p>
+        <a routerLink="/jobs">Back to Jobs</a>
+    </p>
+</section>

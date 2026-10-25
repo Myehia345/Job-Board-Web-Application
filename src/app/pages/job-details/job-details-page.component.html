@@ -1,0 +1,21 @@
+@if (job) {
+  <section class="card">
+    <h1>{{ job.title }}</h1>
+    <p><strong>Company:</strong> {{ job.company }}</p>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <p><strong>Type:</strong> {{ job.type }}</p>
+    <p><strong>Category:</strong> {{ job.category }}</p>
+    <p><strong>Description:</strong> {{ job.description }}</p>
+    <p><strong>Salary:</strong> {{ job.salary }}</p>
+
+    <div class="actions">
+      <button type="button" (click)="applyForJob()">Apply</button>
+      <a routerLink="/jobs">Back to Jobs</a>
+    </div>
+  </section>
+} @else {
+  <section class="card">
+    <h1>Job not found.</h1>
+    <a routerLink="/jobs">Back to Jobs</a>
+  </section>
+}
