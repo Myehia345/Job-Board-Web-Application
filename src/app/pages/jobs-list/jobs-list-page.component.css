@@ -1,0 +1,26 @@
+.filter-panel {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 1.25rem;
+}
+
+.jobs-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.job-card h2 {
+  margin-top: 0;
+}
+
+.button-link {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 700px) {
+  .filter-panel {
+    grid-template-columns: 2fr 1fr;
+  }
+}
